@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rest Client</title>
+  <meta name="description" content="List of User table with Twitter Bootstrap.">
+
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">-->
+  <!--<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>-->
+  <!--<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>-->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+    <div class = "navbar-header">
+      <a class = "navbar-brand" href = "#">Rest Service</a>
+    </div>
+
+    <div>
+      <ul class = "nav navbar-nav">
+        <li><a href = "UserForm/">Create User</a></li>
+        <li class="active"><a href = "/">User List</a></li>
+      </ul>
+    </div>
+  </nav>
+</head>
+
+<!--/*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"/>*/-->
+<!--/*<link rel="stylesheet"         href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"/>*/-->
+<!--/*<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>*/-->
+<!--/*<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>*/-->
+<!--/*<script>*/-->
+
+<body style="margin:20px auto" >
+
+  <div class="container">
+    <div class="row header" style="text-align:center;color:black">
+      <h3>List of User.</h3>
+    </div>
+
+  <table id="UserTable" class="table table-striped"  ng-controller="userController">
+
+    <thead>
+    <tr>
+      <th data-defaultsort="desc">ID</th>
+      <th>NickName</th>
+      <th>Email</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in listOfUsers">
+      <td>{{user.ID}}</td>
+      <td>{{user.nickName}}</td>
+      <td>{{user.personalInformations.email}}</td>
+      <td>{{user.personalInformations.firstName}}</td>
+      <td>{{user.personalInformations.lastName}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+
+</html>
